@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_text_size">16sp</dimen>
+    <dimen name="default_start_text_size">16sp</dimen>
+    <dimen name="default_ed_text_size">50dp</dimen>
+</resources>
