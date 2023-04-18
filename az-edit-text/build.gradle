@@ -42,7 +42,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'omarzer0'
+                groupId = 'com.github.omarzer0'
                 artifactId = 'AZEditText'
                 version = '0.1.0'
             }
