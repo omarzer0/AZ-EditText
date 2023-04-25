@@ -20,7 +20,7 @@
 
         <attr name="containerStrokeWidth" format="dimension" />
         <attr name="containerRadius" format="dimension" />
-        <attr name="az_textSize" format="dimension" />
+        <attr name="textSize" format="dimension" />
         <attr name="edTextHeight" format="dimension" />
         <attr name="passwordShownDrawable" format="reference" />
         <attr name="passwordHiddenDrawable" format="reference" />
