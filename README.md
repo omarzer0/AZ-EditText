@@ -21,7 +21,7 @@ allprojects {
 #### Add this to your module's build.gradle file
 ```gradle
 dependencies {
-    implementation 'com.github.omarzer0:az-edittext:0.1.0'
+      implementation 'com.github.omarzer0:az-edittext:0.1.2'
 }
 ```
 
@@ -48,7 +48,7 @@ dependencies {
 |inputType|Integer|`inputType`|The type of data being placed in a text field|
 |handlePassword|Boolean|`handlePassword`|When set to true it and inputType is one of the password input types (ex: textPassword) it handles showing and hiding password probably and showes a proper eye_closed/opened drawable|
 |passwordShownDrawable|Reference|`passwordShownDrawable`|Drawable to show when password is visible (handle password has to be true and inputType is one of the password input types ex: textPassword)|
-|az_textSize|Dimension|`textSize`|Size of the text|
+|textSize|Dimension|`textSize`|Size of the text|
 |isEdEnabled|Boolean|`isEdEnabled`|Specifies whether the EditText is enabled|
 |activeStrokeColor|Color|`activeStrokeColor`|Color of the border when EditText is active (text is not empty or it is focused)|
 |inactiveStrokeColor|Color|`inactiveStrokeColor`|Color of the border when EditText is inactive (text empty and it is not focused)|
