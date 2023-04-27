@@ -55,6 +55,7 @@ class AZEditText @JvmOverloads constructor(
             field = value
             tvError.isVisible = !value.isNullOrBlank()
             tvError.text = value
+            handleStrokeColor()
         }
 
     var errorTextColor: Int = ERROR_TEXT_COLOR

@@ -44,7 +44,7 @@ afterEvaluate {
 
                 groupId = 'com.github.omarzer0'
                 artifactId = 'AZEditText'
-                version = '0.1.1'
+                version = '0.1.2'
             }
         }
     }
