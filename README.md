@@ -8,9 +8,8 @@ Customizable EditText for Android
 ## Preview
 
  ## App Preview
- <div align="center" width="100" >
-<img src="https://github.com/omarzer0/ImagesAndVideos/blob/main/AZ-EditText/overview.gif"/> 
- </div>
+<img src="https://github.com/omarzer0/ImagesAndVideos/blob/main/AZ-EditText/overview.gif" width="260" height="480" /> 
+
  
 ## Features:
 - Change all attrs from code and xml
