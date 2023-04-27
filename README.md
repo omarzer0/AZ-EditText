@@ -6,8 +6,6 @@ Customizable EditText for Android
 
 
 ## Preview
-
- ## App Preview
 <img src="https://github.com/omarzer0/ImagesAndVideos/blob/main/AZ-EditText/overview.gif" width="260" height="480" /> 
 
  
