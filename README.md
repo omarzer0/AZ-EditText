@@ -7,6 +7,19 @@ Customizable EditText for Android
 
 ## Preview
 
+## Features:
+- Change all attrs from code and xml
+- Set radius to the EditText border
+- Change stroke size and active/inactive/error stroke color
+- Hanldes hide/show password automatically with a single attr (app:handlePassword="true") 
+- Change start drawable when the EditText is active or inactive
+- Add start and/or end drawables
+- Add start text
+- Add click listener on start drawable, end drawable, and start text
+- And more [here](https://github.com/omarzer0/AZ-EditText/edit/main/README.md#properties)
+
+
+
 ## Setup
 
 #### Add this in your root build.gradle file
@@ -26,10 +39,107 @@ dependencies {
 ```
 
 ## Usage
-* 
-
+* Basic usage
 ```xml
+      <az.zero.az_edit_text.AZEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:activeStrokeColor="#4CAF50"
+        app:inactiveStrokeColor="#F1F1F1"
+        app:containerRadius="8dp"
+        app:containerStrokeWidth="1dp"
+        app:hint="Username"
+        app:startDrawable="@drawable/selector_person"
+        app:textSize="16sp" />
+```
+
+* Set click listeners on each drawable and start text
+```kotlin
+        edPhone.setOnStartDrawableClick {
+            Toast.makeText(this, "start drawable clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        edPhone.setOnStartTextClick {
+            Toast.makeText(this, "start text clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        edPhone.setOnEndDrawableClick {
+            Toast.makeText(this, "end drawable clicked", Toast.LENGTH_SHORT).show()
+        }
+```
+
+* Observe text changes
+```kotlin
+   edPhone.setOnTextChange { text, length ->
+            Log.d(TAG, "text changed=> length:$length text:$text\n")
+   }
+```
+
+- If you want the start (drawable/color) to change when the EditText is active or inactive you can use a selector as following:
+  - First create a selector
   
+  ```xml
+      <?xml version="1.0" encoding="utf-8"?>
+      <selector xmlns:android="http://schemas.android.com/apk/res/android">
+          <!--This is the drawable/color to be shown when the EditText is active -->
+          <item android:drawable="@drawable/ic_person_primary" android:state_activated="true" />
+
+          <!--This is the drawable/color to be shown when the EditText is inactive -->
+          <item android:drawable="@drawable/ic_person" />
+      </selector>
+  ```
+  - Then add it to the start drawable
+  
+  ```xml
+       <az.zero.az_edit_text.AZEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ...
+            app:startDrawable="@drawable/selector_person" />
+  ```
+
+
+
+
+
+
+
+## Examples
+* Phone EditText
+```xml
+    <az.zero.az_edit_text.AZEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:activeStrokeColor="#FF9800"
+        app:containerRadius="8dp"
+        app:containerStrokeWidth="1dp"
+        app:endDrawable="@drawable/ic_baseline_check_circle_outline_24"
+        app:hint="1001234567"
+        app:inputType="phone"
+        app:startDrawable="@drawable/selector_phone"
+        app:startText="+20"
+        app:textSize="16sp" />
+```
+* Password
+```xml
+    <az.zero.az_edit_text.AZEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:activeStrokeColor="#2196F3"
+        app:containerRadius="8dp"
+        app:containerStrokeWidth="1dp"
+        app:hint="Password"
+        app:startDrawable="@drawable/selector_password"
+        app:textSize="16sp"    
+                                     
+        // When handlePassword is true and inputType is textPassword the show/hide password will be automatically be handeled
+        app:handlePassword="true" 
+        app:inputType="textPassword"
+                                   
+        // You can change the default Hidden and Shown drawables
+        app:passwordHiddenDrawable="YOUR_DRAWABLE_ID"
+        app:passwordShownDrawable="YOUR_DRAWABLE_ID"                        
+     />
 ```
 
 ## Properties
