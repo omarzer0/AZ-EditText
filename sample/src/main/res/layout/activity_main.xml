@@ -37,7 +37,6 @@
             app:activeStrokeColor="#FF9800"
             app:containerRadius="8dp"
             app:containerStrokeWidth="1dp"
-            app:errorText="dasd"
             app:endDrawable="@drawable/ic_baseline_check_circle_outline_24"
             app:hint="1001234567"
             app:inputType="phone"
@@ -59,7 +58,6 @@
             app:containerStrokeWidth="1dp"
             app:handlePassword="true"
             app:hint="Password"
-
             app:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

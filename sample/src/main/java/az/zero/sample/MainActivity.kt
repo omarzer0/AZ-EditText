@@ -1,8 +1,10 @@
 package az.zero.sample
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
 import az.zero.az_edit_text.AZEditText
 import az.zero.xmlplayground.R
@@ -14,24 +16,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val edPhone = findViewById<AZEditText>(R.id.ed_phone)
+        var toast: Toast? = null
 
         edPhone.setOnStartDrawableClick {
-            Toast.makeText(this, "start drawable clicked", Toast.LENGTH_SHORT).show()
+            toast = makeText(toast, "start drawable clicked")
+            toast?.show()
         }
 
         edPhone.setOnStartTextClick {
-            Toast.makeText(this, "start text clicked", Toast.LENGTH_SHORT).show()
+            toast = makeText(toast, "start text clicked")
+            toast?.show()
         }
 
         edPhone.setOnEndDrawableClick {
-            if (edPhone.errorText == null) edPhone.errorText = "Test error message"
+            if (edPhone.errorText.isNullOrBlank()) edPhone.errorText = "Test error message"
             else edPhone.errorText = null
-            Toast.makeText(this, "end drawable clicked", Toast.LENGTH_SHORT).show()
+            toast = makeText(toast, "end drawable clicked")
+            toast?.show()
         }
 
         edPhone.setOnTextChange { text, length ->
             Log.d(TAG, "text changed=> length:$length text:$text\n")
         }
 
+    }
+
+    private fun Activity.makeText(toast: Toast?, text: String): Toast? {
+        toast?.cancel()
+        return makeText(this, text, Toast.LENGTH_SHORT)
     }
 }

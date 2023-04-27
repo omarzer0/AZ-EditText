@@ -8,7 +8,6 @@
         <attr name="errorText" format="string" />
         <attr name="startDrawable" format="reference" />
         <attr name="endDrawable" format="reference" />
-        <attr name="containerBackground" format="reference" />
         <attr name="errorBackground" format="reference" />
         <attr name="maxLength" format="integer" min="0" />
         <attr name="handlePassword" format="boolean" />
