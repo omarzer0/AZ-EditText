@@ -7,6 +7,11 @@ Customizable EditText for Android
 
 ## Preview
 
+ ## App Preview
+ <div align="center" width="100" >
+<img src="https://github.com/omarzer0/ImagesAndVideos/blob/main/AZ-EditText/overview.gif"/> 
+ </div>
+ 
 ## Features:
 - Change all attrs from code and xml
 - Set radius to the EditText border
