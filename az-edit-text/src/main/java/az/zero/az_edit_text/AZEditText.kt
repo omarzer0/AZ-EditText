@@ -50,18 +50,25 @@ class AZEditText @JvmOverloads constructor(
             edMainText.hint = value
         }
 
-    var startText: String = ""
-        set(value) {
-            field = value
-            tvStartText.text = value
-            tvStartText.isVisible = value.isNotBlank()
-        }
-
     var errorText: String? = null
         set(value) {
             field = value
             tvError.isVisible = !value.isNullOrBlank()
             tvError.text = value
+            handleStrokeColor()
+        }
+
+    var errorTextColor: Int = ERROR_TEXT_COLOR
+        set(value) {
+            field = value
+            tvError.setTextColor(value)
+        }
+
+    var startText: String = ""
+        set(value) {
+            field = value
+            tvStartText.text = value
+            tvStartText.isVisible = value.isNotBlank()
         }
 
     var startDrawable: Drawable? = null
@@ -104,6 +111,18 @@ class AZEditText @JvmOverloads constructor(
                 //             if (passwordVisible) ContextCompat.getDrawable(context, R.drawable.ic_eye_closed)
                 //                else ContextCompat.getDrawable(context, R.drawable.ic_eye)
             }
+        }
+
+    var passwordShownDrawable = context.getResourceDrawable(R.drawable.ic_eye_opened)
+        set(value) {
+            field = value
+            handleSetPasswordEndDrawable()
+        }
+
+    var passwordHiddenDrawable = context.getResourceDrawable(R.drawable.ic_eye_closed)
+        set(value) {
+            field = value
+            handleSetPasswordEndDrawable()
         }
 
     private var passwordVisible: Boolean = false
@@ -184,24 +203,6 @@ class AZEditText @JvmOverloads constructor(
             edMainText.gravity = value
         }
 
-    var errorTextColor: Int = ERROR_TEXT_COLOR
-        set(value) {
-            field = value
-            tvError.setTextColor(value)
-        }
-
-    var passwordShownDrawable = context.getResourceDrawable(R.drawable.ic_eye_opened)
-        set(value) {
-            field = value
-            handleSetPasswordEndDrawable()
-        }
-
-    var passwordHiddenDrawable = context.getResourceDrawable(R.drawable.ic_eye_closed)
-        set(value) {
-            field = value
-            handleSetPasswordEndDrawable()
-        }
-
     fun setOnStartTextClick(action: (String) -> Unit) {
         tvStartText.setOnClickListener { action(tvStartText.text.toString()) }
     }
@@ -249,7 +250,7 @@ class AZEditText @JvmOverloads constructor(
             handlePassword = typedArray.getBoolean(R.styleable.AZEditText_handlePassword, false)
             inputType = typedArray.getInt(R.styleable.AZEditText_inputType, DEFAULT_TEXT_INPUT_TYPE)
             isEdEnabled = typedArray.getBoolean(R.styleable.AZEditText_isEdEnabled, true)
-            textSize = typedArray.getDimensionPixelSize(R.styleable.AZEditText_az_textSize, -1)
+            textSize = typedArray.getDimensionPixelSize(R.styleable.AZEditText_textSize, -1)
             containerRadius = typedArray.getDimension(R.styleable.AZEditText_containerRadius, 0f)
             strokeWidth =
                 typedArray.getDimensionPixelSize(R.styleable.AZEditText_containerStrokeWidth, 0)
