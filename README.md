@@ -16,7 +16,7 @@ Customizable EditText for Android
 - Add start and/or end drawables
 - Add start text
 - Add click listener on start drawable, end drawable, and start text
-- And more [here](https://github.com/omarzer0/AZ-EditText/edit/main/README.md#properties)
+- And more [here](#properties)
 
 
 
